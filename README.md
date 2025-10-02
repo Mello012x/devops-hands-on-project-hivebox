@@ -60,3 +60,16 @@ npm >= 10.9.3
 If you want a easy way to manage javascript toolchain:
 
 [volta.sh](https://volta.sh) >= 2.0.2
+
+### Run locally with node:
+
+npm install
+
+npm run dev
+
+
+### Run locally with Docker
+
+docker build -t hivebox:0.0.1 .
+
+docker run --name hivebox -p 3000:3000 -d hivebox:0.0.1
