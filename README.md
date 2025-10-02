@@ -52,4 +52,11 @@ Here is a pre-start checklist:
 
 ## Implementation
 
-** ADD YOUR IMPLEMENTATION DOCUMENTATION HERE **
+### Pre-requisites
+
+NodeJS >= 22.20.0
+npm >= 10.9.3
+
+If you want a easy way to manage javascript toolchain:
+
+[volta.sh](https://volta.sh) >= 2.0.2
