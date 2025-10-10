@@ -2,11 +2,11 @@
   "name": "devops-hands-on-project-hivebox",
   "version": "0.0.1",
   "description": "Hivebox is an app that tracks environmental sensor data from openSenseMap.",
-  "main": "server.js",
+  "main": "server.mjs",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon api/server.js"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "dev": "nodemon api/server.mjs"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,9 @@
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
   }
 }
