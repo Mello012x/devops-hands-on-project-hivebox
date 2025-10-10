@@ -11,5 +11,5 @@ export function getVersion(req, res) {
 
 export async function getTemperature(req, res) {
     const data = await fetchAndNormalize()
-    res.status(200).send(data)
+    res.status(200).send({ meanTemperature: data })
 }
