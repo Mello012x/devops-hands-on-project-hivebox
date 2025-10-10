@@ -1,6 +1,6 @@
 {
   "name": "devops-hands-on-project-hivebox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hivebox is an app that tracks environmental sensor data from openSenseMap.",
   "main": "server.mjs",
   "type": "module",
