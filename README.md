@@ -97,7 +97,7 @@ npm run dev
 ```sh
 docker build -t hivebox:0.0.2-dev --target dev .
 
-#bind mount the 
+#bind mount the project folder to the /app folder inside the container
 docker run --name hivebox-dev -v $(PWD):/app -d -p 3000:3000 hivebox:0.0.2-dev
 ```
 
