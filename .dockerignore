@@ -1,1 +1,12 @@
+# Exclude Javascript dependencies. Should be installed from scratch or bind-mounted for dev.
 node_modules
+
+# Exclude docs, readme, etc...
+*.md 
+
+# Exclude test archives.
+jest.config.js
+*.test.mjs
+
+# Exclude git directories
+.git
