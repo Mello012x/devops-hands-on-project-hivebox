@@ -95,9 +95,10 @@ npm run dev
 
 #### Locally with Docker:
 ```sh
-docker build -t hivebox:0.0.2 .
+docker build -t hivebox:0.0.2-dev --target dev .
 
-docker run --name hivebox -p 3000:3000 -d hivebox:0.0.2
+#bind mount the 
+docker run --name hivebox-dev -v $(PWD):/app -d -p 3000:3000 hivebox:0.0.2-dev
 ```
 
 ---
