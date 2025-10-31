@@ -102,10 +102,11 @@ docker build -t hivebox:0.0.2-dev --target dev .
 # - Anonymous volume preserves container's node_modules to avoid host/container binary incompatibility.
 
 docker run --name hivebox-dev \
-	-v $(PWD):/app \
-	-v /app/node_modules \
-	-d -p 3000:3000 \
-	hivebox:0.0.2-dev
+ -v $(PWD):/app \
+ -v /app/node_modules \
+ -d \
+ -p 3000:3000 \
+ hivebox:0.0.2-dev
 ```
 
 ---
