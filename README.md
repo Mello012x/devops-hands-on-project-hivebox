@@ -55,12 +55,12 @@ Here is a pre-start checklist:
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Mello012x/devops-hands-on-project-hivebox/dev?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Mello012x/devops-hands-on-project-hivebox?style=for-the-badge)
 
-### Tecnologies:
+### Tecnologies
+
 - Node.js 22 + ESM.
 - Express.js
 - Jest + Supertest
 - Docker
-
 
 ### Pre-requisites
 
@@ -68,37 +68,44 @@ Here is a pre-start checklist:
 
 - npm >= 10.9.3
 
-If you want a easy way to manage javascript toolchain:
-
-- <a href="https://volta.sh" target="_blank">volta.sh </a> >= 2.0.2
-
 ---
 
-### Installing
+### Clonning
 
 ```bash
 git clone https://github.com/Mello012x/devops-hands-on-project-hivebox.git
 cd devops-hands-on-project-hivebox
-npm install
 ```
 
 ---
 
 ### Running
 
-#### Locally with node:
+#### Locally with node
+
 Inside project folder:
+
 ```sh
+npm install
+
 npm run dev
 ```
 
+#### Locally with Docker
 
-#### Locally with Docker:
 ```sh
+# Build development image.
 docker build -t hivebox:0.0.2-dev --target dev .
 
-#bind mount the project folder to the /app folder inside the container
-docker run --name hivebox-dev -v $(PWD):/app -d -p 3000:3000 hivebox:0.0.2-dev
+# Development build run with hot-reload:
+# - Bind mounts the project folder for real-time updates.
+# - Anonymous volume preserves container's node_modules to avoid host/container binary incompatibility.
+
+docker run --name hivebox-dev \
+	-v $(PWD):/app \
+	-v /app/node_modules \
+	-d -p 3000:3000 \
+	hivebox:0.0.2-dev
 ```
 
 ---
@@ -106,19 +113,25 @@ docker run --name hivebox-dev -v $(PWD):/app -d -p 3000:3000 hivebox:0.0.2-dev
 ### Endpoints
 
 ### GET /
+
 Welcome Text.
+
 ```markdown
 Welcome to Hivebox.
 ```
 
 #### GET /version
+
 Return the api version in plain text.
+
 ```markdown
 0.0.2
 ```
 
 #### GET /temperature
+
 Return the average temperature from 3 OpensenseMap Stations within the last hour: 5eba5fbad46fb8001b799786, 5c21ff8f919bf8001adf2488, 5ade1acf223bd80019a1011c.
+
 ```json
 {
   "meanTemperature": 16.56
@@ -143,4 +156,3 @@ Return the average temperature from 3 OpensenseMap Stations within the last hour
 ├─ Dockerfile
 ├─ README.md
 ```
-
