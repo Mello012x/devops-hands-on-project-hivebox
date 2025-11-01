@@ -26,3 +26,6 @@ jobs:
         with:
           eslint: true
           prettier: true
+
+      - name: unit tests
+        run: npm test
