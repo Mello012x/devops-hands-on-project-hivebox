@@ -29,3 +29,18 @@ jobs:
 
       - name: unit tests
         run: npm test
+
+      - name: Endpoint test
+        run: |
+          npm run dev &
+          SERVER_PID=$!
+          npx wait-on http://localhost:3000/version -t 30000
+          response=$(curl http://localhost:3000/version)
+          if [[ $response == "0.0.2" ]]; then
+            echo "response valid"
+            exit 0
+          else
+            echo "response invalid"
+            exit 1
+          fi
+          kill $SERVER_PID
