@@ -54,6 +54,7 @@ Here is a pre-start checklist:
 
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Mello012x/devops-hands-on-project-hivebox/dev?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Mello012x/devops-hands-on-project-hivebox?style=for-the-badge)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Mello012x/devops-hands-on-project-hivebox/badge)](https://scorecard.dev/viewer/?uri=github.com/Mello012x/devops-hands-on-project-hivebox)
 
 ### Tecnologies
 
