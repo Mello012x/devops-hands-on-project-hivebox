@@ -4,14 +4,12 @@
 
 name: CI - Lint, Build, Test & Security Check.
 
-on:
-  push:
-    branches:
-      - dev
+on: push
 
 jobs:
   analysis:
     runs-on: ubuntu-latest
+    if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
     permissions:
       # Required when publishing results (badge / API / code scanning)
       security-events: write
