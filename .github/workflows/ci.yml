@@ -149,7 +149,7 @@ jobs:
           tags: hivebox:latest
           target: prod
           # Export as oci format for a lower image size.
-          outputs: type=oci, dest=/tmp/hivebox.tar
+          outputs: type=docker, dest=/tmp/hivebox.tar
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -167,6 +167,9 @@ jobs:
         with:
           name: hivebox-image
           path: /tmp
+
+      - name: Check downloaded archive
+        run: ls -lh /tmp/hivebox.tar
 
       - name: Load Docker image.
         run: docker load -i /tmp/hivebox.tar
