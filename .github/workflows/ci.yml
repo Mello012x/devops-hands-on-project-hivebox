@@ -21,6 +21,22 @@ jobs:
       issues: read
       pull-requests: read
       checks: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Run OSSF Scorecard
+        uses: ossf/scorecard-action@v2
+        with:
+          results_file: results.sarif
+          results_format: sarif
+
+      - name: Upload SARIF results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
 
   # i decided to mantain this job here just to be explicit on how the workflow works. It probably will become an composable action and i know that it's not a best practice build an job just to generate cache. I could do it in the code-lint job and retrieve in the subsequent ones.
   create-cache:
