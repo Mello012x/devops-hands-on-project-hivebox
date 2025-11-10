@@ -1,5 +1,5 @@
 # development
-FROM node:22.20-alpine3.21 AS dev
+FROM node:22.20-alpine3.21@sha256:f40aebdd0c1959821ab6d72daecafb2cd1d4c9a958e9952c1d71b84d4458f875 AS dev
 LABEL maintainer="Leonardo Mello"
 EXPOSE 3000
 ENV NODE_ENV=development
@@ -11,7 +11,7 @@ RUN npm install
 ENTRYPOINT ["npm", "run", "dev"]
 
 # Production
-FROM node:22.20-alpine3.21 AS prod
+FROM node:22.20-alpine3.21@sha256:f40aebdd0c1959821ab6d72daecafb2cd1d4c9a958e9952c1d71b84d4458f875 AS prod
 EXPOSE 3000
 WORKDIR /app
 ENV NODE_ENV=production
