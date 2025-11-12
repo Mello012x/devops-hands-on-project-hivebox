@@ -52,9 +52,9 @@ Here is a pre-start checklist:
 
 ## Implementation
 
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/Mello012x/devops-hands-on-project-hivebox/dev?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/Mello012x/devops-hands-on-project-hivebox?style=for-the-badge)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Mello012x/devops-hands-on-project-hivebox/badge)](https://scorecard.dev/viewer/?uri=github.com/Mello012x/devops-hands-on-project-hivebox)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/mello012x/devops-hands-on-project-hivebox/dev?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/mello012x/devops-hands-on-project-hivebox?style=for-the-badge)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/mello012x/devops-hands-on-project-hivebox/badge)](https://scorecard.dev/viewer/?uri=github.com/mello012x/devops-hands-on-project-hivebox)
 
 ### Tecnologies
 
@@ -74,7 +74,7 @@ Here is a pre-start checklist:
 ### Clonning
 
 ```bash
-git clone https://github.com/Mello012x/devops-hands-on-project-hivebox.git
+git clone https://github.com/mello012x/devops-hands-on-project-hivebox.git
 cd devops-hands-on-project-hivebox
 ```
 
@@ -96,7 +96,7 @@ npm run dev
 
 ```sh
 # Build development image.
-docker build -t hivebox:0.0.2-dev --target dev .
+docker build -t hivebox:0.2.0-dev --target dev .
 
 # Development build run with hot-reload:
 # - Bind mounts the project folder for real-time updates.
@@ -107,14 +107,14 @@ docker run --name hivebox-dev \
  -v /app/node_modules \
  -d \
  -p 3000:3000 \
- hivebox:0.0.2-dev
+ hivebox:0.2.0-dev
 ```
 
 ---
 
 ### Endpoints
 
-### GET /
+#### GET /
 
 Welcome Text.
 
@@ -127,7 +127,7 @@ Welcome to Hivebox.
 Return the api version in plain text.
 
 ```markdown
-0.0.2
+0.2.0
 ```
 
 #### GET /temperature
@@ -145,16 +145,29 @@ Return the average temperature from 3 OpensenseMap Stations within the last hour
 ### Structure
 
 ```
-├─ src/
-│ ├─ api/
-│  ├─ routes/
-│  └─ utils/
-│ └─ lib/
-├─ .dockerigore
-├─ .gitignore
-├─ .package.json
-├─ .package.lock.json
-├─ .jest.conf.js
-├─ Dockerfile
-├─ README.md
+├── 📁 .github
+│   ├── 📁 workflows
+│   │   └── ⚙️ ci.yml
+│   └── ⚙️ dependabot.yml
+├── 📁 api
+│   ├── 📁 routes
+│   │   └── 📄 routes.mjs
+│   ├── 📁 utils
+│   │   ├── 📄 functions.mjs
+│   │   └── 📄 functions.test.mjs
+│   ├── 📄 app.mjs
+│   ├── 📄 server.mjs
+│   └── 📄 server.test.mjs
+├── 📁 lib
+│   └── 📄 appInfo.mjs
+├── ⚙️ .dockerignore
+├── ⚙️ .gitignore
+├── ⚙️ .prettierignore
+├── 🐳 Dockerfile
+├── 📝 README.md
+├── 📄 eslint.config.js
+├── 📄 jest.config.js
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+└── 📄 prettierrc
 ```
