@@ -4,12 +4,12 @@
 
 name: CI - Lint, Build, Test & Security Check.
 
-on: 
+on:
   push:
     branches: [main, dev]
 
   pull_request:
-    branches: [main,dev]
+    branches: [main, dev]
 
 jobs:
   analysis:
@@ -157,4 +157,4 @@ jobs:
       - name: Test endpoint
         run: |
           response=$(curl http://localhost:3000/version)
-          if [[ $response != "0.0.2" ]]; then exit 1; fi
+          if [[ $response != "0.2.0" ]]; then exit 1; fi
